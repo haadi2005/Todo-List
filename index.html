@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Todo App</title>
+    <link rel="stylesheet" href="/Src/style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Todo list</h1>
+    <!-- saves all the items -->
+    <div class="items"></div>
+    <template class="itemTemplate">
+      <!-- this is just here to be copied -->
+      <div class="item">
+        <input type="checkbox" class="item-completed" />
+        <input type="text" placeholder="Todo..." class="item-description" />
+        <button class="deleteItem">
+          <img src="/Src/Del Icon.svg" alt="X" />
+        </button>
+      </div>
+    </template>
+    <button class="add">Add</button>
+  </body>
+</html>
