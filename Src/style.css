@@ -38,14 +38,8 @@ h1 {
   margin: 0px 5px 10px 0px;
 }
 
+.add,
 .deleteItem {
-  cursor: pointer;
-  border: 0px;
-  background-color: rgb(53, 53, 53);
-  margin: 0px 0px 10px 1px;
-}
-
-.add {
   cursor: pointer;
   font-weight: 800;
   font-size: 1rem;
@@ -54,4 +48,9 @@ h1 {
   background-color: rgb(0, 140, 124);
   border: 0px;
   border-radius: 2px;
+}
+
+.deleteItem {
+  background-color: rgb(255, 89, 89);
+  margin: 0px 0px 10px 5px;
 }

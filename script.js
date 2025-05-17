@@ -1,6 +1,7 @@
 const items_container = document.querySelector(".items");
 const item_template = document.querySelector(".itemTemplate");
 const add_btn = document.querySelector(".add");
+const delete_item = document.querySelector(".deleteItem");
 
 //Give that js array to items when page first loads up or refresh
 let items = getItems();
@@ -53,11 +54,13 @@ function refreshList() {
   //we will set layout(html) for every single item/todo
   for (const item of items) {
     //copies the input box and checkbox and assigns to itemElement
-    const itemElement = item_template.content.cloneNode(true);
+    let itemElement = item_template.content.cloneNode(true);
     //Assigns input box to descriptionInput, so we can assign user text to it
     const descriptionInput = itemElement.querySelector(".item-description");
     //Assigns check-box to completedInput, so we can change it later
     const completedInput = itemElement.querySelector(".item-completed");
+
+    // const delete_item = itemElement.querySelector(".deleteItem");
 
     //set the " description: "" "  to value of descriptionInput
     descriptionInput.value = item.description;
@@ -78,6 +81,15 @@ function refreshList() {
 
     // finally this will append the our input box and checkbox
     items_container.append(itemElement);
+
+    // Deletes all todo items and local storage
+    delete_item.addEventListener("click", () => {
+      descriptionInput.remove();
+      completedInput.remove();
+      localStorage.removeItem("todo");
+      items.length = 0;
+      refreshList();
+    });
   }
 }
 
